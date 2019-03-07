@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<div class="col-md-12">
+<ul *ngFor="let stu of students" (click)="onSelect(stu)">
+  <li>
+    {{stu.id}}||{{stu.name}}||{{stu.class}}||{{stu.subjects}}||{{stu.schoolname}}<button (click)="remove(stu)">X</button>
+  </li>
+  </ul>
+
+  <input type="text" name="" placeholder="id"[(ngModel)]="students1.id"><br><br>
+  <input type="text" name="" placeholder="name"[(ngModel)]="students1.name"><br><br>
+  <input type="text" name="" placeholder="class"[(ngModel)]="students1.class"><br><br>
+  <input type="text" name="" placeholder="subjects"[(ngModel)]="students1.subjects"><br><br>
+  <input type="text" name="" placeholder="schoolname"[(ngModel)]="students1.schoolname"><br><br>
+  <button (click)="addStudent()">Add student</button>
+  <button (click)="removeStudent()">Remove student</button><br><br>
+
+
+  <input type="text" name=""[(ngModel)]="students1.id">
+
+  <div *ngIf="selectedStudent">
+    <label>id:</label>{{selectedStudent.id}}<br><br>
+    <label>name:</label>
+    <input type="text" name="" [(ngModel)]="selectedStudent.name"><br><br>
+   
+    <!-- {{selectedStudent.name}} -->
+  </div>
+<br>
+  <button (click)="clearItems()">Clear Items</button>
+</div>
